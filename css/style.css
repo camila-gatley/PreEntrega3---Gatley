@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+    background-image: url(../media/image/apartment.jpg);
+    height: 100vh;
+    overflow: hidden;
+}
+header{
+    display: flex;
+    color: antiquewhite;
+    align-items: center;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #0000006a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #00000073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    width: 90%;
+}
+
+.lift{
+    display: flex;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+.buttons .container{
+    display: grid;
+    width:70%;
+    height: 90vh;
+    text-align: center;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.buttons .container .button{
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #0000006a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #00000073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:antiquewhite;
+    font-size: 180%;
+    margin-bottom: 10%;
+    margin-right: 10%;
+    border-radius: 50%;
+    align-items: center;
+}
+
+.button:hover{
+    opacity: 70%;
+
+}
+
+.lift .screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #0000006a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #00000073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-top: 150px;
+    margin-bottom: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.lift .screen h2{
+    text-align: center;
+    font-size: 50px;
+    color: antiquewhite;
+}
+
+.lift .screen .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    height: 200px;
+    border-radius: 5%;
+    font-size: 100px;
+}
+
+.screen .history{
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #0000006a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #00000073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:antiquewhite;
+    font-size: 180%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right: 10%;
+    border-radius: 5%;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #0000006a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #00000073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 10px;
+}
+
+.center h2{
+    text-align: center;
+    padding: 0 0 20px 0;
+    color: antiquewhite;
+}
+
+.center form{
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: antiquewhite;
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5pc;
+    color:antiquewhite;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: antiquewhite;
+    transition: .5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -5px;
+    color: antiquewhite;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+    width: 100%;
+}
+
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #0000006a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #00000073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: antiquewhite;
+}
+
+input[type="submit"]:hover{
+    border-color: antiquewhite;
+    background-color: #aaa6a696;;
+    transition: .5s;
+}
