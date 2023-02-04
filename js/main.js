@@ -1,8 +1,8 @@
 const apiKey = 'f169182e855b51c0d4ec8b29896c2344';
 const weatherLocation = 'Buenos Aires, Argentina';
-const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=Buenos%20Aires,Argentina&appid=${apiKey}`;
+const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=Buenos%20Aires,Argentina&appid=${apiKey}`;
 
-fetch(weatherUrl, {mode: 'cors'})
+fetch(weatherUrl)
 .then(response => response.json())
 .then(data => {
     const city = data.name;
@@ -18,6 +18,7 @@ fetch(weatherUrl, {mode: 'cors'})
 .catch(error => {
     console.error('Error fetching weather data:', error);
 });
+
 
 class Lift{
     constructor(actualFloor, floorAmount){
