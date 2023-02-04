@@ -1,3 +1,21 @@
+const apiKey = '9cc4e410b639c960194e60356ddd01d7';
+const weatherLocation = 'Buenos Aires, Argentina';
+const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=Buenos%20Aires,Argentina&appid=$9cc4e410b639c960194e60356ddd01d7`;
+
+fetch(weatherUrl)
+.then(response => response.json())
+.then(data => {
+    const city = data.name;
+    const temperature = data.main.temp;
+    const weatherDescription = data.weather[0].description;
+
+    document.querySelector('#location').innerHTML = city;
+    document.querySelector('#temperature').innerHTML = temperature;
+    document.querySelector('#weather-description').innerHTML = weatherDescription;
+})
+.catch(error => {
+    console.error('Error fetching weather data:', error);
+});
 
 class Lift{
     constructor(actualFloor, floorAmount){
@@ -21,7 +39,10 @@ class Lift{
             return;
         }
         this.currentFloor=number;
-        this.historyArray.push(number);
+        this.historyArray.push({
+            date: DateTime.local().toLocaleString(DateTime.DATETIME_SHORT),
+            number: number
+        });
     }
 
     updateDisplay(){
@@ -29,6 +50,7 @@ class Lift{
         this.floorAmount.innerText = this.currentFloorAmount;
     }
 }
+var DateTime = luxon.DateTime;
 
 
 const employee = [
@@ -48,7 +70,6 @@ const employee = [
     calle : "Francia 321"}
 ];
 
-
 const employeeform = document.querySelector('#employeeform');
 const floor = document.querySelector('#floor');
 const floorcount = document.querySelector('#floorcount');
@@ -58,6 +79,7 @@ const numberButtons = document.querySelectorAll('[data-number]');
 const actualFloor = document.querySelector('[data-actual-floor]');
 const floorAmount = document.querySelector('[data-floor-amount]');
 const history = document.querySelector('#history');
+
 
 
 if (employeeform) {
@@ -107,11 +129,12 @@ const showHistory = () =>{
     const modalBody = document.querySelector('.modal .modal-body')
     modalBody.innerHTML="";
     if(modalBody){
-        lift.historyArray.forEach((number)=>{
-            const numbers=number;
+        lift.historyArray.forEach((historyItem)=>{
+            const number = historyItem.number;
+            const date = historyItem.date;
             modalBody.innerHTML += `
             <div class="modal-contenedor">
-            <p>${numbers}</p>
+            <p> ${date} - ${number} </p>
             </div>
             `
         })
@@ -125,3 +148,5 @@ const showHistory = () =>{
 function SaveStorage() {
     localStorage.setItem("history" ,JSON.stringify(lift.historyArray))
 } 
+
+

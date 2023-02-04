@@ -195,3 +195,19 @@ input[type="submit"]:hover{
     background-color: #aaa6a696;;
     transition: .5s;
 }
+
+#weather-announcer {
+    display: grid;
+    align-self: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    color: #333;
+    margin: 50px;
+    background-color: rgba(250, 235, 215, 0.735);
+    }
+
+#location, #temperature, #weather-description {
+    font-size: 20px;
+    margin: 10px 0;
+    }
