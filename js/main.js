@@ -1,6 +1,6 @@
 const apiKey = 'f169182e855b51c0d4ec8b29896c2344';
 const weatherLocation = 'Buenos Aires, Argentina';
-const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=Buenos%20Aires,Argentina&appid=${apiKey}`;
+const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=Buenos%20Aires,Argentina&appid=${apiKey}`;
 
 fetch(weatherUrl)
 .then(response => response.json())
