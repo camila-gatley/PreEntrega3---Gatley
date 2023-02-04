@@ -1,6 +1,6 @@
-const apiKey = '9cc4e410b639c960194e60356ddd01d7';
+const apiKey = 'f169182e855b51c0d4ec8b29896c2344';
 const weatherLocation = 'Buenos Aires, Argentina';
-const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=Buenos%20Aires,Argentina&appid=$9cc4e410b639c960194e60356ddd01d7`;
+const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=Buenos%20Aires,Argentina&appid=${apiKey}`;
 
 fetch(weatherUrl)
 .then(response => response.json())
@@ -9,8 +9,10 @@ fetch(weatherUrl)
     const temperature = data.main.temp;
     const weatherDescription = data.weather[0].description;
 
+    const temperatureInCelsius = temperature - 273.15;
+    document.querySelector('#temperature').innerHTML = temperatureInCelsius.toFixed(2) + "°C";
+
     document.querySelector('#location').innerHTML = city;
-    document.querySelector('#temperature').innerHTML = temperature;
     document.querySelector('#weather-description').innerHTML = weatherDescription;
 })
 .catch(error => {
